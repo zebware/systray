@@ -64,15 +64,15 @@
 }
 
 - (void)setIcon:(NSImage *)image {
-  [statusItem setImage:image];
+  statusItem.button.image = image;
 }
 
 - (void)setTitle:(NSString *)title {
-  [statusItem setTitle:title];
+  statusItem.button.title = title;
 }
 
 - (void)setTooltip:(NSString *)tooltip {
-  [statusItem setToolTip:tooltip];
+  statusItem.button.toolTip = tooltip;
 }
 
 - (IBAction)menuHandler:(id)sender
@@ -102,9 +102,9 @@
     [menuItem setEnabled:TRUE];
   }
   if (item->checked == 1) {
-    [menuItem setState:NSOnState];
+    [menuItem setState:NSControlStateValueOn];
   } else {
-    [menuItem setState:NSOffState];
+    [menuItem setState:NSControlStateValueOff];
   }
 }
 
